@@ -16,7 +16,9 @@ const loadDocument = async (data, model) => {
 };
 
 const addId = (data) => {
-  data.forEach((item) => (item._id = new mongoose.Types.ObjectId()));
+  data.forEach(
+    (item) => !item._id && (item._id = new mongoose.Types.ObjectId())
+  );
 };
 
 exports.fixtures = {
