@@ -1,11 +1,11 @@
 {
-  "name": "mongoose-fixture",
+  "name": "antsa-mongoose-fixture",
   "version": "1.0.0",
   "description": "A simple data fixtures for mongoose",
   "scripts": {
     "test": "mocha test/fixtures.spec.js"
   },
-  "author": "Antsa Fiderana",
+  "author": "antsa1615",
   "keywords": [
     "fixtures",
     "mongoose"
