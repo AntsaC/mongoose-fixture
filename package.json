@@ -1,7 +1,8 @@
 {
   "name": "antsa-mongoose-fixture",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple data fixtures for mongoose",
+  "main": "fixtures.js",
   "scripts": {
     "test": "mocha test/fixtures.spec.js"
   },
