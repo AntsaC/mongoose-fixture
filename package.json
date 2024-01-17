@@ -1,13 +1,16 @@
 {
   "name": "mongoose-fixture",
   "version": "1.0.0",
-  "description": "A data fixtures package fo mongoose",
-  "main": "index.js",
+  "description": "A simple data fixtures for mongoose",
   "scripts": {
     "test": "mocha test/fixtures.spec.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Antsa Fiderana",
+  "keywords": [
+    "fixtures",
+    "mongoose"
+  ],
+  "license": "MIT",
   "dependencies": {
     "mongoose": "^8.1.0"
   },
