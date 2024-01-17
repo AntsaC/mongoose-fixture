@@ -4,11 +4,16 @@
   "description": "A data fixtures package fo mongoose",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/fixtures.spec.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "mongoose": "^8.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "dotenv": "^16.3.1",
+    "mocha": "^10.2.0"
   }
 }

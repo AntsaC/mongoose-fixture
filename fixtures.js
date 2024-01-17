@@ -1,14 +1,17 @@
 const { default: mongoose } = require("mongoose");
 
-const loadFixtures = (callback, autoDisconnect = false) => {
-  mongoose.connection.once("connected", () => {
-    callback();
-    if (autoDisconnect) mongoose.connection.close();
-  });
+const loadFixtures = async (...fixtures) => {
+  await mongoose.connection.dropDatabase();
+  for (const fixture of fixtures) {
+    if (fixture instanceof Array) {
+      await loadDocument(fixture[0], fixture[1]);
+    } else {
+      throw Error("Fixture array expected");
+    }
+  }
 };
 
 const loadDocument = async (data, model) => {
-  addId(data);
   await model.insertMany(data);
 };
 
@@ -16,7 +19,7 @@ const addId = (data) => {
   data.forEach((item) => (item._id = new mongoose.Types.ObjectId()));
 };
 
-module.exports = {
-  loadFixtures,
-  loadDocument,
+exports.fixtures = {
+  load: loadFixtures,
+  addId,
 };
